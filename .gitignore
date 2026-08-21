@@ -1,0 +1,8 @@
+# Cloned third-party repo — has its own history, excluded from yours
+awesome-free-llm-apis/
+
+# Editor settings
+.vscode/
+
+# Compiled Java output
+*.class
