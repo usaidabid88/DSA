@@ -4,5 +4,8 @@ awesome-free-llm-apis/
 # Editor settings
 .vscode/
 
+# Claude Code local settings
+.claude/
+
 # Compiled Java output
 *.class
