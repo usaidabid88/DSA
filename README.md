@@ -19,6 +19,8 @@ DSA/
 ├── STACK/                  # Stacks — array & linked-list based
 │   ├── Basics/
 │   └── tasks/
+├── QUEUE/                  # Queues — linked-list based
+│   └── Basics/
 └── VIBE CODED/             # Fun experiments outside the curriculum
 ```
 
@@ -29,7 +31,7 @@ DSA/
 | Arrays | 🟢 Done | Insertion, deletion |
 | Linked Lists | 🟢 Done | Reverse, merge two lists, sublist splitting, even-position printing, averages |
 | Stacks | 🟢 Done | Array-backed & linked-list-backed implementations |
-| Queues | ⚪ Up next | |
+| Queues | 🟡 In progress | Linked-list queue with sentinel head node |
 | Trees | ⚪ Planned | |
 | Graphs | ⚪ Planned | |
 | Sorting & Searching | ⚪ Planned | |
