@@ -1,4 +1,4 @@
-package Link_list.Basics_1;
+
 
 public class Basics_4 {
     static class Node{

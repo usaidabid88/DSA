@@ -1,5 +1,4 @@
-package Link_list.Basics_1.Tasks;
-
+package Tasks;
 
             // print all the nodes in the linklist with a serial number
 

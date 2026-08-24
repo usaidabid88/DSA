@@ -20,7 +20,8 @@ DSA/
 │   ├── Basics/
 │   └── tasks/
 ├── QUEUE/                  # Queues — linked-list based
-│   └── Basics/
+│   ├── Basics/
+│   └── Task/               # Queue interface + circular doubly linked list
 └── VIBE CODED/             # Fun experiments outside the curriculum
 ```
 
@@ -31,7 +32,7 @@ DSA/
 | Arrays | 🟢 Done | Insertion, deletion |
 | Linked Lists | 🟢 Done | Reverse, merge two lists, sublist splitting, even-position printing, averages |
 | Stacks | 🟢 Done | Array-backed & linked-list-backed implementations |
-| Queues | 🟡 In progress | Linked-list queue with sentinel head node |
+| Queues | 🟡 In progress | Queue interface, circular doubly linked list with sentinel node; credit/debit sum comparison task |
 | Trees | ⚪ Planned | |
 | Graphs | ⚪ Planned | |
 | Sorting & Searching | ⚪ Planned | |

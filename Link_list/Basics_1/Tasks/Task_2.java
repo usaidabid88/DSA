@@ -1,4 +1,4 @@
-package Link_list.Basics_1.Tasks;
+package Tasks;
 
 
                 // sum of all the nodes in the linklist
