@@ -36,6 +36,20 @@ public class Linked_Main {
         }
 
         System.out.println("are these equal : " + Credit.equal(debit));
+        Object[] debitArray = debit.toArray();
+        System.out.println("printing complete array of debit queue: ");
+        int i = 0;
+        while(i != debitArray.length){
+            System.out.println(debitArray[i++]);
+        }
+
+        System.out.println("printing a sub part ");
+        for(int j = 1; j < 4; j++){
+            System.out.println(debitArray[j]);
+        }
+
+
+        
 
         // System.out.println("Size of the queue: " + Credit.size()); // Size of the queue: 3
         // System.out.println("First element in the queue: " + Credit.first()); // First element in the queue: 1
