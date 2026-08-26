@@ -35,6 +35,8 @@ public class Linked_Main {
             System.out.println("Credit and debit are equal");
         }
 
+        System.out.println("are these equal : " + Credit.equal(debit));
+
         // System.out.println("Size of the queue: " + Credit.size()); // Size of the queue: 3
         // System.out.println("First element in the queue: " + Credit.first()); // First element in the queue: 1
         // System.out.println("Removed element from the queue: " + Credit.remove()); // Removed element from the queue: 1
