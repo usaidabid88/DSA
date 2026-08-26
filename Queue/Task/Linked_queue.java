@@ -53,6 +53,22 @@ public class Linked_queue implements Queue {
         // Also correct when the queue becomes empty: both links then point back to the sentinel itself
     }
 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("'");
+
+        Node current = head.next;
+        while(current != head){
+            sb.append(current.data);
+            if(current.data != head){
+                sb.append(",");
+            }
+            current = current.next;
+        }
+        sb.append("'");
+        return sb.toString();
+    }
+
     public int sum(){
         if (size == 0) throw new IllegalStateException("Queue is empty");
         int sum = 0;
@@ -62,6 +78,24 @@ public class Linked_queue implements Queue {
             current = current.next;
         }
         return sum;
+    }
+
+    public boolean equal(Linked_queue other){
+        if(this.size != other.size){
+            return false;
+        }
+        Node current1 = this.head.next;
+        Node current2 = other.head.next;
+
+        while(current1 != head){
+            if(! current1.data .equals(current2.data)){
+                return false;
+            }
+            current1 = current1.next;
+            current2 =  current2.next;
+        }
+        return true;
+
     }
 
 }
