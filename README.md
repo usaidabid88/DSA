@@ -19,8 +19,8 @@ DSA/
 ├── STACK/                  # Stacks — array & linked-list based
 │   ├── Basics/
 │   └── tasks/
-├── QUEUE/                  # Queues — linked-list based
-│   ├── Basics/
+├── QUEUE/                  # Queues — array & linked-list based
+│   ├── Basics/             # Array-backed circular queue + demo
 │   └── Task/               # Queue interface + circular doubly linked list
 └── VIBE CODED/             # Fun experiments outside the curriculum
 ```
@@ -32,7 +32,7 @@ DSA/
 | Arrays | 🟢 Done | Insertion, deletion |
 | Linked Lists | 🟢 Done | Reverse, merge two lists, sublist splitting, even-position printing, averages |
 | Stacks | 🟢 Done | Array-backed & linked-list-backed implementations |
-| Queues | 🟡 In progress | Queue interface, circular doubly linked list with sentinel node; credit/debit sum comparison task, array conversion via `toArray()` |
+| Queues | 🟡 In progress | Queue interface, circular doubly linked list with sentinel node; array-backed circular queue; credit/debit sum comparison task, array conversion via `toArray()` |
 | Trees | ⚪ Planned | |
 | Graphs | ⚪ Planned | |
 | Sorting & Searching | ⚪ Planned | |
