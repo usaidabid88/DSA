@@ -1,13 +1,5 @@
 package Queue.Basics;
 
-/**
- * Demo driver for {@link Array_queue}.
- *
- * Creates a fixed-capacity queue, enqueues a few integers,
- * and prints size / peek / dequeue results to verify FIFO behaviour.
- *
- * @author usaid88
- */
 public class Array_Main {
 
     public static void main(String[] args) {

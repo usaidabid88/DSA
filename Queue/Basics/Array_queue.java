@@ -40,6 +40,5 @@ public class Array_queue implements Queue {
         front = (front + 1) % a.length; // Update front index in a circular manner
         size--; // Decrement the size of the queue
         return temp; // Return the removed element
-    }
-
+    } 
 }
