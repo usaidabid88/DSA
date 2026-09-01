@@ -22,6 +22,9 @@ DSA/
 ├── QUEUE/                  # Queues — array & linked-list based
 │   ├── Basics/             # Array-backed circular queue + demo
 │   └── Task/               # Queue interface + circular doubly linked list
+├── Sorting_&_Searching/    # Hashing, Searching & Sorting
+│   ├── Basic/              # Hash interface, array-backed hash table + demo
+│   └── Task/               # Custom object storage (Country records) with Hash table
 └── VIBE CODED/             # Fun experiments outside the curriculum
 ```
 
@@ -35,7 +38,7 @@ DSA/
 | Queues | 🟡 In progress | Queue interface, circular doubly linked list with sentinel node; array-backed circular queue; credit/debit sum comparison task, array conversion via `toArray()` |
 | Trees | ⚪ Planned | |
 | Graphs | ⚪ Planned | |
-| Sorting & Searching | ⚪ Planned | |
+| Sorting & Searching | 🟡 In progress | Hash interface, array-backed hash table (`put`, `get`, `remove`, `size`), bitwise hash distribution, custom object storage (Country dataset) |
 
 ## ▶️ Running the code
 
