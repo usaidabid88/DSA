@@ -1,12 +1,12 @@
 
-// Country class representing country data and demonstrating hash table storage
+// Country class demonstrating hash table usage with custom objects
 public class Country {
 
-    String name;       // Name of the country
-    String language;   // Official/primary language
-    long population;   // Total population
+    String name;       // Country name
+    String language;   // Primary language
+    long population;   // Population count
 
-    // Constructor to initialize Country attributes
+    // Constructor to initialize country attributes
     public Country(String name, String language, long population) {
         this.name = name;
         this.language = language;
@@ -14,14 +14,13 @@ public class Country {
     }
 
     public static void main(String[] args) {
-        // Create hash table instance for storing country records
-        Hash_methods ht = new Hash_methods();
+        HashMethods ht = new HashMethods();
 
-        // 1. Insert country records with ISO country code as key
+        // Add countries with country code as key
         ht.put("PK", new Country("Pakistan", "Urdu", 331000000));
         ht.put("IN", new Country("India", "Hindi", 38000000));
 
-        // 2. Retrieve and print country details by key
+        // Retrieve and print country data
         Country pk = (Country) ht.get("PK");
         if (pk != null) {
             System.out.println("Pakistan: " + pk.name + ", " + pk.language + ", " + pk.population);
@@ -32,16 +31,16 @@ public class Country {
             System.out.println("India: " + in.name + ", " + in.language + ", " + in.population);
         }
 
-        // 3. Display current size of the hash table
+        // Print table size
         System.out.println("Size: " + ht.size());
 
-        // 4. Inspect calculated hash bucket index for each key
+        // Check hash bucket index for keys
         System.out.println("Hash code of 'PK': " + ht.hash("PK"));
         System.out.println("Hash code of 'IN': " + ht.hash("IN"));
 
-        // 5. Test removing an entry (safe removal of non-existing key returns null)
-        ht.remove("Canada");
-        System.out.println("After removing Canada, Size: " + ht.size());
+        // Remove an entry and print updated size
+        ht.remove("PK");
+        System.out.println("After removing Pakistan, Size: " + ht.size());
     }
 
 }

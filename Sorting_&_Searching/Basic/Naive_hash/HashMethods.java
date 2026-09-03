@@ -1,5 +1,6 @@
-
 // HashMethods class implements the Hash interface using an array-backed hash table
+
+
 public class HashMethods implements Hash {
 
     // Inner class Entry to store key-value pairs in the hash table
@@ -33,36 +34,23 @@ public class HashMethods implements Hash {
 
     // Retrieves the value associated with the given key (returns null if key not found)
     public Object get(Object key) {
-        int h = hash(key); // Compute the bucket index
-        if (entries[h] == null) {
-            return null; // Key not present in the table
-        }
-        return entries[h].value; // Return the value at this slot
+        return entries[hash(key)].value; // Return the value at the computed slot  
     }
 
     // Inserts or updates a key-value pair in the hash table
     public Object put(Object key, Object value) {
-        int h = hash(key); // Compute the bucket index
-        if (entries[h] != null) {
-            Object oldVal = entries[h].value; // Save existing value
-            entries[h] = new Entry(key, value); // Overwrite with new entry
-            return oldVal; // Return the previous value
-        }
-        entries[h] = new Entry(key, value); // Place new entry in empty slot
+        entries[hash(key)] = new Entry(key, value); // Place new entry in the computed slot
         size++; // Increment the size counter
         return null; // No previous value existed
     }
 
     // Removes the key-value pair associated with the given key
     public Object remove(Object key) {
-        int h = hash(key); // Compute the bucket index
-        if (entries[h] == null) {
-            return null; // Key not present in the table
-        }
-        Object temp = entries[h].value; // Store the value before deletion
-        entries[h] = null; // Clear the slot
-        size--; // Decrement the size counter
-        return temp; // Return the removed value
+       int h = hash(key);
+       Object temp = entries[h].value; // Store the value to return after removal
+       entries[h] = null;
+       size--;
+       return temp; // Return the removed value
     }
 
 }

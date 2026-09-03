@@ -22,10 +22,11 @@ DSA/
 ├── QUEUE/                  # Queues — array & linked-list based
 │   ├── Basics/             # Array-backed circular queue + demo
 │   └── Task/               # Queue interface + circular doubly linked list
-├── Sorting_&_Searching/    # Hashing, Searching & Sorting
-│   ├── Basic/              # Hash interface, array-backed hash table + demo
-│   └── Task/               # Custom object storage (Country records) with Hash table
-└── VIBE CODED/             # Fun experiments outside the curriculum
+└── Sorting_&_Searching/    # Hashing, Searching & Sorting
+    ├── Basic/
+    │   ├── Naive_hash/             # Direct array hash table without collision resolution
+    │   └── Linear_probation_hash/  # Open addressing with linear probing and NIL markers
+    └── Task/                       # Custom object storage (Country records) with Hash table
 ```
 
 ## ✅ Progress
@@ -35,7 +36,7 @@ DSA/
 | Arrays | 🟢 Done | Insertion, deletion |
 | Linked Lists | 🟢 Done | Reverse, merge two lists, sublist splitting, even-position printing, averages |
 | Stacks | 🟢 Done | Array-backed & linked-list-backed implementations |
-| Queues | 🟡 In progress | Queue interface, circular doubly linked list with sentinel node; array-backed circular queue; credit/debit sum comparison task, array conversion via `toArray()` |
+| Queues | 🟢 In progress | Queue interface, circular doubly linked list with sentinel node; array-backed circular queue; credit/debit sum comparison task, array conversion via `toArray()` |
 | Trees | ⚪ Planned | |
 | Graphs | ⚪ Planned | |
 | Sorting & Searching | 🟡 In progress | Hash interface, array-backed hash table (`put`, `get`, `remove`, `size`), bitwise hash distribution, custom object storage (Country dataset) |

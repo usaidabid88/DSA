@@ -1,4 +1,3 @@
-
 // Interface defining standard Hash Table operations
 public interface Hash {
 
