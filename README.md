@@ -77,23 +77,166 @@ DSA/
 ## 🛠️ Deep Dives by Topic
 
 <details>
-<summary><b>🥞 Stacks & Queues (Click to expand)</b></summary>
+<summary><b>📦 1. Arrays & Dynamic Operations</b></summary>
+
 <br/>
 
-- **Array-Backed Queue:** Implements a circular ring buffer with `front` and `rear` pointers using modular arithmetic `(rear + 1) % capacity` to eliminate element shifting.
-- **Sentinel Doubly Linked Queue:** Employs a dummy head/sentinel node where `head.next = head` and `head.previous = head` initially, removing null edge cases during insertions and deletions.
-- **Dynamic Resizing Stack:** Automatically doubles capacity using `System.arraycopy` when the backing array reaches full load.
+### Overview
+Demonstrates foundational contiguous memory allocation and manual index-based data manipulation in Java.
+
+### Key Concepts & Implementations
+- **Manual Element Insertion:** Allocates a new array of size `n + 1`, copies elements up to the target index, places the new value, and shifts subsequent elements right.
+- **Manual Element Deletion:** Allocates an array of size `n - 1` and skips the specified position, shifting subsequent elements left.
+- **Time Complexity:**
+  - Access / Update: `O(1)`
+  - Insert / Delete at position: `O(n)` (due to manual array copying and shifting)
+
+```plaintext
+Insert at index 2:
+[10, 20, 30, 40] ──> [10, 20] + [25] + [30, 40] ──> [10, 20, 25, 30, 40]
+```
+
 </details>
 
 <details>
-<summary><b>🔍 Hashing & Open Addressing (Click to expand)</b></summary>
+<summary><b>🔗 2. Singly Linked Lists</b></summary>
+
 <br/>
 
-- **Hash Function:** Converts object 32-bit signed hash codes into non-negative indices using bitwise masking:
-  $$\text{index} = (\text{key.hashCode()} \ \& \ \text{0x7fffffff}) \pmod{\text{capacity}}$$
-- **Naive Hash Table:** Direct slot allocation without collision resolution to demonstrate hashing fundamentals.
-- **Linear Probing Table:** Open addressing mechanism probing consecutive indices `(h + i) % capacity` with sentinel `NIL` markers to preserve probe chains after deletion.
-- **Custom Entity Mapping:** Fast key-value lookups storing rich `Country(name, language, population)` objects mapped by ISO country codes.
+### Overview
+Dynamic node-based linear data structure where each node stores a data value and a reference (`next`) to the subsequent node.
+
+### Key Concepts & Implementations
+- **Core Operations:** Node linking, head insertion, tail appending, and iterative traversal.
+- **Sorted Insertion (`insert`):** Traverses the chain and inserts elements in ascending order without requiring pre-sorting.
+- **In-Place List Reversal:** Iteratively reverses pointers / arrays to invert the order of nodes.
+- **List Merging & Splitting:** Merges two independently sorted lists into a single consolidated sequence; partitions lists based on pivot values.
+- **Statistical Aggregations:** Computes node count, sum, average, and extracts even-indexed elements.
+- **Time Complexity:**
+  - Insertion at Head: `O(1)`
+  - Search / Traversal / Deletion: `O(n)`
+
+```plaintext
+Node Structure:
+[ Data | Next ] ──> [ Data | Next ] ──> [ Data | Next ] ──> null
+```
+
+</details>
+
+<details>
+<summary><b>🥞 3. Stacks (LIFO — Last In, First Out)</b></summary>
+
+<br/>
+
+### Overview
+Implementations of the Stack Abstract Data Type (ADT) comparing fixed/dynamic contiguous arrays with dynamic linked nodes.
+
+### Key Concepts & Implementations
+- **Array-Backed Stack (`Array_stack`):**
+  - Uses an internal `Object[]` buffer and a `top` integer index.
+  - **Dynamic Resizing:** Doubles capacity using `System.arraycopy()` when the stack reaches full load.
+- **Linked-List Stack (`Linked_stack`):**
+  - Pushes and pops from the head of a linked node chain for guaranteed `O(1)` operations without resizing overhead.
+- **Advanced Stack Features:**
+  - `getMin()`: Tracks the minimum element in the stack.
+  - `sortStack()`: Sorts the stack elements using auxiliary space.
+  - `equal()` & `split()`: Checks structural equality and partitions a stack into two halves.
+- **Time Complexity:**
+  - `push(obj)`: `O(1)` amortized (Array) / `O(1)` strict (Linked)
+  - `pop()` / `peek()` / `isEmpty()`: `O(1)`
+
+```plaintext
+Push (10 -> 20 -> 30) | Pop -> 30
+┌─────┐
+│ 30  │ <── Top (peek / pop)
+├─────┤
+│ 20  │
+├─────┤
+│ 10  │
+└─────┘
+```
+
+</details>
+
+<details>
+<summary><b>🚶‍♂️ 4. Queues (FIFO — First In, First Out)</b></summary>
+
+<br/>
+
+### Overview
+Implementations of the Queue ADT comparing circular array buffers with sentinel-based circular doubly linked lists.
+
+### Key Concepts & Implementations
+- **Circular Array Queue (`Array_queue`):**
+  - Uses `front` and `rear` pointers with modular arithmetic:
+    `rear = (rear + 1) % capacity` and `front = (front + 1) % capacity`
+  - Reuses vacant slots left by `remove()` in `O(1)` time without shifting elements.
+- **Sentinel Circular Doubly Linked Queue (`Linked_queue`):**
+  - Employs a dummy **Sentinel Node** where `head.next = head` and `head.previous = head` initially.
+  - Every real data node is guaranteed to have non-null `next` and `previous` neighbors.
+  - Completely eliminates null pointer checks and edge cases for 0-element and 1-element queues.
+- **Applied Tasks:**
+  - Transaction sum comparison (`Credit` vs `Debit` queues).
+  - Array export via `toArray()` for sublist slicing and verification.
+- **Time Complexity:**
+  - `add(obj)` (Enqueue): `O(1)`
+  - `remove()` (Dequeue): `O(1)`
+  - `first()` (Peek): `O(1)`
+
+```plaintext
+Circular Doubly Linked Queue with Sentinel:
+┌────────────────────────────────────────────────────────┐
+▼                                                        │
+[ Sentinel ] <───> [ Node 1 ] <───> [ Node 2 ] <───> [ Node 3 ]
+│                                                        ▲
+└────────────────────────────────────────────────────────┘
+```
+
+</details>
+
+<details>
+<summary><b>🔍 5. Hashing & Open Addressing</b></summary>
+
+<br/>
+
+### Overview
+Key-value associative mapping implementations utilizing bitwise integer hashing, direct arrays, and open addressing collision resolution.
+
+### Key Concepts & Implementations
+- **Non-Negative Bitwise Hash Function:**
+  ```java
+  public int hash(Object key) {
+      return (key.hashCode() & 0x7fffffff) % entries.length;
+  }
+  ```
+  - `key.hashCode()`: Extracts Java's 32-bit integer hash.
+  - `& 0x7fffffff`: Strips the negative sign bit (converts negative hash codes to positive).
+  - `% entries.length`: Maps the hash code directly into valid array bucket indices `[0 .. capacity - 1]`.
+
+- **Naive Hash Table (`Naive_hash/`):**
+  - Direct array slot mapping to demonstrate hashing fundamentals.
+  - Serves as the baseline before introducing collision resolution.
+
+- **Linear Probing Hash Table (`Linear_probation_hash/`):**
+  - **Collision Resolution:** When index `h` is occupied, probes consecutive slots `(h + i) % capacity`.
+  - **Tombstone Sentinel (`NIL`):** When an entry is deleted, marks the slot with `NIL` (`new Entry(null, null)`) instead of `null` so subsequent probe chains during `get()` are not prematurely broken.
+
+- **Applied Dataset Task (`Task/Country.java`):**
+  - Stores rich `Country` entities (name, language, population) indexed by 2-letter ISO country codes (`"PK"`, `"IN"`).
+  - Demonstrates constant-time record retrieval and key deletion.
+
+- **Time Complexity:**
+  - Average Case (`put`, `get`, `remove`): `O(1)`
+  - Worst Case (high load factor / clustering): `O(n)`
+
+```plaintext
+Linear Probing Probe Sequence:
+Hash(Key) = 3
+Index:  [0]   [1]   [2]   [3]      [4]      [5]
+Array: [   ] [   ] [   ] [ PK ] ──> [ IN ] ──> [ Free Slot ]
+                         (occupied) (occupied)   (inserted here!)
+```
+
 </details>
 
 ---
