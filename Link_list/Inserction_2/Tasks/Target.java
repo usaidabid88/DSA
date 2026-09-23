@@ -33,15 +33,25 @@ public class Target {
         p.next=new Node(x,p.next);
         return start;
     }
-    boolean search(Node a,int target)
-    { for (Node i=a;i!=null;i=i.next)//loop for traversing
-        {
-            if(target==i.data)
+    // boolean search(Node a,int target)
+    // { for (Node i=a;i!=null;i=i.next)//loop for traversing
+    //     {
+    //         if(target==i.data)
+    //             return true;
+    //     }
+    //     return false;
+        
+    // }
+    boolean search(Node current,int target){
+        while(current!=null){
+            if(current.data==target){
                 return true;
+            }
+            current=current.next;
         }
         return false;
-        
     }
+    
     Node insertList(Node start, int[] values) {      // Method to insert an array of values into the linked list
         for (int value : values) {
             start = Insert(start, value);
@@ -54,9 +64,8 @@ public class Target {
         start = insertList(start,firstList);
 
 
-
-        boolean found=search(start,10);
-        System.out.println("element 10 found "+found);
+        System.out.println(search(start,10));
+        
 
         
 

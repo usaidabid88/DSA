@@ -44,17 +44,19 @@ public class Average_of_linked_list {
 
         Node temp = start;
         int sum = 0;
+        int length = 0;
         while (temp != null) {
             sum += temp.data;
             temp = temp.next;
+            length++;
         }
 
-        Node pump = start;
-        int length = 0;
-        while (pump != null) {
-            length++;
-            pump = pump.next;
-        }
+        // Node pump = start;
+        // int length = 0;
+        // while (pump != null) {
+        //     length++;
+        //     pump = pump.next;
+        // }
         double average = (double) sum / length;
         System.out.println("Average of the linked list: " + average);
     }

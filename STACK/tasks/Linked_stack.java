@@ -2,6 +2,16 @@ package STACK.tasks;
 
 public class Linked_stack implements Stack {
 
+    public static class Node{
+        Object data; // Variable to store the data of the node
+        Node next; // Variable to store the reference to the next node
+
+        public Node(Object data, Node next){
+            this.data = data; // Initialize the data of the node
+            this.next = next; // Initialize the reference to the next node
+        }
+    }
+
     private int size; // Variable to keep track of the size of the stack
     private Node top; // Variable to keep track of the top node of the stack
 
@@ -26,15 +36,7 @@ public class Linked_stack implements Stack {
         return temp; // Return the data of the removed top node
     }
 
-    public static class Node{
-        Object data; // Variable to store the data of the node
-        Node next; // Variable to store the reference to the next node
-
-        public Node(Object data, Node next){
-            this.data = data; // Initialize the data of the node
-            this.next = next; // Initialize the reference to the next node
-        }
-    }
+    
 
                 //methods of our desives
 

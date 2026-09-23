@@ -28,34 +28,38 @@ public class Merge_the_Lists {
         p.next = new Node(x, p.next);
         return start;
     }
+
+    static void insertList(Node start, int[] values) {      // Method to insert an array of values into the linked list
+        for (int value : values) {
+            start = insert(start, value);
+        }
+    }
     public static void main(String[] args) {
 
-        Node start1 = null;
-        Node start2 = null;
+        // Node start1 = null;
+        // Node start2 = null;
 
         int[] values1 = {50, 40, 30, 20, 10};
         int[] values2 = {55, 45, 35, 25, 15};
 
-        for(int value : values1){
-            start1 = insert(start1 , value);
-        }
-
-        for(int value : values2){
-            start2 = insert(start2 , value);
-        }
+        // insertList(start1, values1);
+        // insertList(start2, values2);
 
         Node meargedlist = null;
+
+        insertList(meargedlist, values1);
+        insertList(meargedlist, values2);
         
-        Node temp1 = start1;
-        while(temp1 != null){
-            meargedlist = insert(meargedlist , temp1.data);
-            temp1 = temp1.next;
-        }
-         Node temp2 = start2;
-        while(temp2 != null){
-            meargedlist = insert(meargedlist , temp2.data);
-            temp2 = temp2.next;
-        }
+        // Node temp1 = start1;
+        // while(temp1 != null){
+        //     meargedlist = insert(meargedlist , temp1.data);
+        //     temp1 = temp1.next;
+        // }
+        //  Node temp2 = start2;
+        // while(temp2 != null){
+        //     meargedlist = insert(meargedlist , temp2.data);
+        //     temp2 = temp2.next;
+        // }
         Node temp = meargedlist;    
         System.out.println("Mearged list: ");
         while(temp != null){

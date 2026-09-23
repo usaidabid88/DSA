@@ -23,15 +23,26 @@ public class Reverse_linked_list {
         }
         return start;
     }
+
+    // static void printReverse(Node node) {
+    // if (node == null) {
+    //     return;
+    // }
+
+    // printReverse(node.next);
+    // System.out.println(node.data);
+    // }
     public static void main(String[] args) {
 
         Node start = null;
         int[] firstList = { 50, 40, 30, 20, 10 };
         start = InsertList(start, firstList);
 
+        // System.out.println("REVERSE");
+        // printReverse(start);
         // compute size
         int size = 0;
-        for (Node n = start; n != null; n = n.next) size++;
+        for (Node n = start; n != null; n = n.next){ size++; }
 
         int[] array = new int[size];
         int index = 0;

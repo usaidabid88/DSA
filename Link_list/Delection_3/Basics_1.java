@@ -57,7 +57,6 @@ public class Basics_1 {
         Basics_1 helper = new Basics_1(0); // helper instance to call instance methods
         Basics_1 Node = null;
 
-        
 
         // build a sorted list
         Node = helper.insert(Node, 10);
