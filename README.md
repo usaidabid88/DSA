@@ -12,7 +12,7 @@
 <br/>
 
 > *"Every complex system is built from simple, well-understood foundations."*  
-> Each topic starts with **pure foundational implementations**, followed by **applied problem-solving tasks** and **exam/interview preparation suites**.
+> Each topic starts with **pure foundational implementations**, followed by **applied problem-solving tasks** and **practice suites**.
 
 </div>
 
@@ -24,7 +24,6 @@
 - 📐 **Dual Architectural Paradigms** — Direct comparison of **Array-backed** vs **Linked Node** implementations for Stacks, Queues, and Hash Tables.
 - 🎯 **Applied Practice Tasks** — Practical exercises including credit/debit transaction matching, Sentinel circular doubly linked queues, and ISO country record hashing.
 - 🔄 **Recursive Problem Solving** — Recursive tree calculations and multi-dimensional array-of-linked-list traversals.
-- 🏆 **Midterm & Exam Preparation** — Dedicated problem suites covering in-place pointer reversal, descending sorted insertion, even-node deletion, and two-pointer list merging.
 - 🚀 **Plug & Play Execution** — Standalone drivers (`main`) in every module for instant compilation and execution.
 
 ---
@@ -58,29 +57,10 @@ DSA/
 │   │   └── 📁 Linear_probation_hash/         # Open addressing hash table with Linear Probing & NIL tombstones
 │   └── 📁 Task/                              # Custom entity storage (Country records) using Hash Table
 │
-├── 📁 Recursion/
-│   └── 📁 Task/
-│       ├── Fibonacci.java                    # Recursive sequence generation with base-case branching
-│       └── Print_array_of_linkedlist.java    # 2D recursive traversal over an array of linked list heads
-│
-└── 📁 prep/                                  # Comprehensive Exam & Interview Preparation Modules
-    ├── 📁 Midterm_Practice/solutions/
-    │   ├── Problem01_DescendingInsertion.java # Descending sorted linked list insertion
-    │   ├── Problem02_AppendArray.java        # Sequential array-to-linked-list conversion
-    │   ├── Problem03_DeleteEven.java         # In-place deletion of even-valued nodes
-    │   ├── Problem04_ReverseList.java        # 3-pointer in-place iterative list reversal
-    │   └── Problem05_MergeLists.java         # O(m + n) sorted linked list merging with dummy head
-    ├── 📁 Queue/
-    │   ├── Queue.java                        # Queue ADT Interface
-    │   └── LinkedQueue.java                  # Sentinel circular doubly linked queue with toArray export
-    ├── 📁 stack/
-    │   ├── Stack.java                        # Stack ADT Interface
-    │   ├── ArrayStack.java                   # Dynamic array stack with min/max, mid lookup & splitting
-    │   └── LinkedStack.java                  # Linked stack with auxiliary stack sorting & two-pointer mid
-    ├── 📁 INSERCTION/
-    │   └── Node.java                         # Consolidated singly linked list driver (types, batching, search)
-    └── 📁 dilision/
-        └── Node.java                         # Singly linked list deletion and in-place node replacement
+└── 📁 Recursion/
+    └── 📁 Task/
+        ├── Fibonacci.java                    # Recursive sequence generation with base-case branching
+        └── Print_array_of_linkedlist.java    # 2D recursive traversal over an array of linked list heads
 ```
 
 ---
@@ -95,7 +75,6 @@ DSA/
 | **Queues** | FIFO | Circular array queue with modulo arithmetic; Sentinel-based circular doubly linked queue | 🟢 `Completed` |
 | **Hashing** | Associative | Bitwise hash distribution (`& 0x7fffffff`), open addressing with linear probing, `NIL` tombstones | 🟢 `Completed` |
 | **Recursion** | Algorithmic | Mathematical series generation, multi-level recursive traversal of composite data structures | 🟢 `Completed` |
-| **Prep Suite** | Exam / Interview | 5 core midterm algorithms, advanced sentinel queues, auxiliary stack sorting | 🟢 `Completed` |
 | **Trees & BST** | Hierarchical | Binary Search Tree traversals, insertion, deletion, balancing | ⚪ `Planned` |
 | **Sorting Algorithms** | Algorithms | Quick Sort, Merge Sort, Insertion Sort, Heap Sort | ⚪ `Planned` |
 | **Graphs** | Non-Linear | Adjacency matrix/list representations, BFS, DFS, shortest path | ⚪ `Planned` |
@@ -360,9 +339,6 @@ java Hashing.Task.Country
 javac Recursion/Task/Print_array_of_linkedlist.java
 java Recursion.Task.Print_array_of_linkedlist
 
-# Run In-Place List Reversal Midterm Solution
-javac prep/Midterm_Practice/solutions/Problem04_ReverseList.java
-java prep.Midterm_Practice.solutions.Problem04_ReverseList
 ```
 
 ---
