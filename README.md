@@ -61,6 +61,11 @@ DSA/
     └── 📁 Task/
         ├── Fibonacci.java                    # Recursive sequence generation with base-case branching
         └── Print_array_of_linkedlist.java    # 2D recursive traversal over an array of linked list heads
+│
+└── 📁 Tree/Binary tree/
+  ├── 📁 basics/                             # Binary tree node structure and basic operations
+  ├── 📁 complete_class/                     # Complete binary tree construction and height calculation
+  └── 📁 Traversal/                          # Preorder, inorder, and postorder traversals
 ```
 
 ---
@@ -75,7 +80,7 @@ DSA/
 | **Queues** | FIFO | Circular array queue with modulo arithmetic; Sentinel-based circular doubly linked queue | 🟢 `Completed` |
 | **Hashing** | Associative | Bitwise hash distribution (`& 0x7fffffff`), open addressing with linear probing, `NIL` tombstones | 🟢 `Completed` |
 | **Recursion** | Algorithmic | Mathematical series generation, multi-level recursive traversal of composite data structures | 🟢 `Completed` |
-| **Trees & BST** | Hierarchical | Binary Search Tree traversals, insertion, deletion, balancing | ⚪ `Planned` |
+| **Trees & BST** | Hierarchical | Binary tree construction, height calculation, and preorder, inorder, and postorder traversals | 🟢 `Completed` |
 | **Sorting Algorithms** | Algorithms | Quick Sort, Merge Sort, Insertion Sort, Heap Sort | ⚪ `Planned` |
 | **Graphs** | Non-Linear | Adjacency matrix/list representations, BFS, DFS, shortest path | ⚪ `Planned` |
 
@@ -280,7 +285,31 @@ printArray(lists, 0)
 </details>
 
 <details>
-<summary><b>🏆 7. Midterm Practice & Exam Preparation Suite</b></summary>
+<summary><b>🌳 7. Binary Trees & Traversals</b></summary>
+
+<br/>
+
+### Overview
+Builds binary trees from linked child nodes and demonstrates the three standard depth-first traversal orders.
+
+### Key Concepts & Implementations
+- **Binary Tree Structure (`Tree/Binary tree/complete_class/BinaryTree.java`):** Stores a root value with optional left and right subtrees.
+- **Tree Height:** Calculates the longest root-to-leaf path recursively.
+- **Depth-First Traversals:** Supports preorder (`root → left → right`), inorder (`left → root → right`), and postorder (`left → right → root`) traversal.
+- **Complexity:** Each traversal visits every node once in `O(n)` time; height calculation also runs in `O(n)` time.
+
+```plaintext
+    A
+     / \
+    B   C
+   / \ / \
+  D  E G  F
+```
+
+</details>
+
+<details>
+<summary><b>🏆 8. Midterm Practice & Exam Preparation Suite</b></summary>
 
 <br/>
 
@@ -339,6 +368,13 @@ java Hashing.Task.Country
 javac Recursion/Task/Print_array_of_linkedlist.java
 java Recursion.Task.Print_array_of_linkedlist
 
+```
+
+### 5️⃣ Run Binary Tree Traversals
+```bash
+# Run the complete binary tree traversal demo
+javac "Tree/Binary tree/complete_class/BinaryTree.java"
+java -cp "Tree/Binary tree/complete_class" complete_class.BinaryTree
 ```
 
 ---
