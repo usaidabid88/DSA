@@ -1,5 +1,3 @@
-package basics;
-
 public class BinaryTree {
     private Object root;
     BinaryTree left;

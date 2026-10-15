@@ -1,5 +1,3 @@
-package Traversal;
-
 public class Tree_preOrder {
     private Object root;
     Tree_preOrder left;

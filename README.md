@@ -62,10 +62,14 @@ DSA/
         ├── Fibonacci.java                    # Recursive sequence generation with base-case branching
         └── Print_array_of_linkedlist.java    # 2D recursive traversal over an array of linked list heads
 │
-└── 📁 Tree/Binary tree/
-  ├── 📁 basics/                             # Binary tree node structure and basic operations
-  ├── 📁 complete_class/                     # Complete binary tree construction and height calculation
-  └── 📁 Traversal/                          # Preorder, inorder, and postorder traversals
+└── 📁 Tree/
+  ├── 📁 Binary tree/
+  │   ├── 📁 basics/                         # Binary tree node structure and basic operations
+  │   ├── 📁 complete_class/                 # Complete binary tree construction and height calculation
+  │   └── 📁 Traversal/                      # Preorder, inorder, and postorder traversals
+  ├── 📁 BinarySearchTree/                   # Ordered insertion, size tracking, and sideways tree printing
+  ├── 📁 AVL/                                # Height-aware tree scaffold and rebalance operation
+  └── 📁 GraphicalTree/                      # Swing visualization of a binary tree
 ```
 
 ---
@@ -80,7 +84,8 @@ DSA/
 | **Queues** | FIFO | Circular array queue with modulo arithmetic; Sentinel-based circular doubly linked queue | 🟢 `Completed` |
 | **Hashing** | Associative | Bitwise hash distribution (`& 0x7fffffff`), open addressing with linear probing, `NIL` tombstones | 🟢 `Completed` |
 | **Recursion** | Algorithmic | Mathematical series generation, multi-level recursive traversal of composite data structures | 🟢 `Completed` |
-| **Trees & BST** | Hierarchical | Binary tree construction, height calculation, and preorder, inorder, and postorder traversals | 🟢 `Completed` |
+| **Trees & BST** | Hierarchical | Binary tree construction, height calculation, traversals, ordered insertion, and tree printing | 🟢 `Completed` |
+| **AVL Trees** | Self-Balancing | Height-aware tree structure with a rebalance scaffold for future rotations | 🟡 `In Progress` |
 | **Sorting Algorithms** | Algorithms | Quick Sort, Merge Sort, Insertion Sort, Heap Sort | ⚪ `Planned` |
 | **Graphs** | Non-Linear | Adjacency matrix/list representations, BFS, DFS, shortest path | ⚪ `Planned` |
 
@@ -309,7 +314,31 @@ Builds binary trees from linked child nodes and demonstrates the three standard 
 </details>
 
 <details>
-<summary><b>🏆 8. Midterm Practice & Exam Preparation Suite</b></summary>
+<summary><b>🌲 8. Binary Search Trees, AVL Scaffolding & Visualization</b></summary>
+
+<br/>
+
+### Overview
+Extends the binary-tree foundation with ordered insertion, height-aware nodes, and a desktop visualization built with Swing.
+
+### Key Concepts & Implementations
+- **Binary Search Tree (`Tree/BinarySearchTree/BinaryTree.java`):** Inserts unique integer keys while preserving the binary-search ordering property, reports subtree size, and prints the tree sideways.
+- **AVL Foundation (`Tree/AVL/BinaryTree.java`):** Uses sentinel leaves and cached heights to prepare for AVL rebalancing.
+- **Graphical Tree (`Tree/GraphicalTree/TreeDrawer.java`):** Draws nodes and parent-child edges in a scrollable Swing window using in-order horizontal placement and depth-based vertical placement.
+- **Visualization Demo:** Builds and displays a perfect 31-node tree, also printing its in-order sequence, size, and height.
+
+```plaintext
+        16
+      /    \
+     8      24
+    / \    /  \
+   4  12  20  28
+```
+
+</details>
+
+<details>
+<summary><b>🏆 9. Midterm Practice & Exam Preparation Suite</b></summary>
 
 <br/>
 
@@ -372,9 +401,13 @@ java Recursion.Task.Print_array_of_linkedlist
 
 ### 5️⃣ Run Binary Tree Traversals
 ```bash
-# Run the complete binary tree traversal demo
-javac "Tree/Binary tree/complete_class/BinaryTree.java"
-java -cp "Tree/Binary tree/complete_class" complete_class.BinaryTree
+# Compile and run the binary search tree demo
+javac Tree/BinarySearchTree/BinaryTree.java
+java -cp Tree/BinarySearchTree BinarySearchTree.BinaryTree
+
+# Compile and run the graphical tree demo (requires a desktop environment)
+javac Tree/GraphicalTree/*.java
+java -cp Tree/GraphicalTree GraphicalTree.TreeDrawer
 ```
 
 ---

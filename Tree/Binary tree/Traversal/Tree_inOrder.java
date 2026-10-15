@@ -1,4 +1,3 @@
-package Traversal;
 
 public class Tree_inOrder {
 

@@ -1,6 +1,3 @@
-package Traversal;
-
-
 public class Tree_postOrder {
 
     private Object root;

@@ -1,6 +1,3 @@
-package complete_class;
-
-
 public class BinaryTree {
     private Object root;
     BinaryTree left;
