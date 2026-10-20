@@ -66,7 +66,7 @@ public class TreeDrawer extends JPanel {
 
     // Level 1
     root = root.grow(8);
-    root = root.grow(24);
+    // root = root.grow(24);
 
     // Level 2
     root = root.grow(4);
@@ -101,6 +101,7 @@ public class TreeDrawer extends JPanel {
     root = root.grow(27);
     root = root.grow(29);
     root = root.grow(31);
+    root = root.grow(32);  // extra node to make it unbalanced
 
     System.out.println("In-order: " + root.toString());
     System.out.println("Size:     " + root.size());        // 31

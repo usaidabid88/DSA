@@ -46,15 +46,34 @@ public class BinaryTree{
         if(key < this.key)
             left = left.grow(key);
         else right = right.grow(key);
+        rebalance();
+        height = 1 + Math.max(left.height, right.height);
         return this;
     }
     
     // Every thing was same till here in the Binary Search tree and AVL.
     //  this next method (rebalnce) change it to AVL 
 
-    public BinaryTree rebalance(){
-        height = 1 + Math.max(left.height, right.height);
-        return this;
+    private void rebalance(){
+        if(right.height > left.height + 1){
+            if(right.left.height > right.right.height) right.rotateRight();
+            rotateLeft();
+        }else if(left.height > right.height + 1){
+            if(left.right.height > left.left.height) left.rotateLeft();
+            rotateRight();
+        }
+    }
+
+    private void rotateLeft(){
+        left = new BinaryTree(key,left,right.left);
+        key = right.key;
+        right = right.right;
+    }
+
+    private void rotateRight(){
+        left = new BinaryTree(key,left.right,left);
+        key = left.key;
+        right = left.left;
     }
 
     public static void main(String[] args) {
@@ -65,6 +84,9 @@ public class BinaryTree{
         tree.add(7);
         tree.add(12);
         tree.add(18);
+        tree.add(4);
+        tree.add(10);
+        tree.add(55);
         System.out.print(tree.toString());
         
     }
